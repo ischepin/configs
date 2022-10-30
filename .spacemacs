@@ -32,7 +32,9 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(sql
+   '(
+     (go :variables go-backend 'lsp)
+     sql
      yaml
      protobuf
      ;; ----------------------------------------------------------------
@@ -573,7 +575,7 @@ before packages are loaded."
   (set-fringe-mode 5)         ; Left and right border width
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
   (setq elixir-ls-path "/Users/ishchepin/Code/elixir-ls/release/")
-  (setq projectile-project-search-path '("~/Code"))
+  (setq projectile-project-search-path '("~/Code" "~/Code/go_stuff"))
   (setq lsp-file-watch-threshold 3000)
   (setq lsp-file-watch-ignored
         '(".idea" ".ensime_cache" ".eunit" "node_modules"
